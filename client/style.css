@@ -114,7 +114,8 @@ body {
 #searchInput {
     width: 75%;
     border-radius: 25px;
-    padding: 10px
+    padding: 10px;
+    color: #fff !important;
 }
 
 #searchBtn {
