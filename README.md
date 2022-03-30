@@ -91,6 +91,8 @@ npm install coverage -D
 - The 'lucky search' button uses a more specific enpoint and takes the user straight to that website, such as entering bbc will load bbc.co.uk/news
 - This 'lucky search' was set up so the first result in a given topic is displayed - typing 'news' and pressing lucky search will redirect straight to bbc.co.uk/news
 
+![Screenshot 1](client\Screenshot1.png)
+![Screenshot 2](client\Screenshot2.png)
 
 ## Wins and Challenges
 ## Wins
