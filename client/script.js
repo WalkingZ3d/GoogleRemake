@@ -21,11 +21,23 @@ function getWebsite(endpoint){
 }
 
 function getInputValue(){
-let inputVal = document.getElementById("searchInput").value.toLowerCase();
-let x = "/newsPages/" + inputVal;
-console.log(x)
-getAnchorInfo(x)
-document.getElementById("nextPage").click()
+    let inputVal = document.getElementById("searchInput").value.toLowerCase();
+    let x = "/newsPages/" + inputVal;
+    //console.log(x)
+    //document.getElementById("nextPage").click()
+    store(x)
+}
+
+function store(x) {
+    sessionStorage.setItem('first', x);
+    console.log(x)
+    location.href = "search.html"
+}
+
+function getSearchResults() {
+    let first = sessionStorage.getItem('first');
+    console.log(first)
+    getAnchorInfo(first);
 }
 
 let inputPressed = document.getElementById("searchInput");
@@ -74,28 +86,26 @@ function getLuckyPage(inputVal){
     })
 }
 
+
 function getAnchorInfo(endpoint){
     let str = "http://localhost:3003"
     let url = str + endpoint
-    console.log(url)
     fetch(url)
     .then(function (response) {
         return response.json();
     })
-    .then(function (jsonData) {
-    
-    for (let i=0; i=jsonData.length; i++) {
-        // console.log(jsonData.link)
-        // document.getElementById(`anc${i}`).setAttribute("href", jsonData[i].link)
-        // document.getElementById(`anc${i}`).appendChild(jsonData[i].name)
-
-
-        let tag= document.createElement("a")
+    .then(function (jsonData) {   
+    for (let i = 0; i < jsonData.length; i++) {       
+        let tag = document.createElement("a")
         tag.textContent = jsonData[i].name
-        document.getElementById("listGroup").append(tag)
-    }})
+        tag.setAttribute('href', jsonData[i].link)
+        document.getElementById("listGroup").appendChild(tag)
+    }
+    })
     .catch(function (error){
         //alert(error);
         console.log("Error: " + error)
     })
 }
+
+//getAnchorInfo('/newsPages/news')

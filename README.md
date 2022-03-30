@@ -68,23 +68,27 @@ npm install coverage -D
 
 
 ## Process
+
 - Started by installing the relevant packages.
 - Next, the api was given some enpoints to display different data.
-- Then, index.js is called by npm start to make the server live.
-- Elements were laid out in an appropriate manner in the HTML document, and CSS was used to style and anchor them.
-- The script.js file was then written to allow a dynamic data retrival.
-- The getRandomQuote() async function uses a fetch to retrive data from the api and populate the text content of the HTML elements.
-- textContent is used to avoid any injection of JS into the HTML document.
-
+- Then, index.js is called by npm start to make the server live (using nodemon).
+- The home page, index.html, was populated with a footer, header and title.
+- The repsonsive section was then added - an input field and two buttons.
+- Input from the search bar is stored in a local session and passed to the search.html page
+- JavaScript was then written that fetches the api endpoint that matches the search input.
+- This is called when the search page loads, so the information displayed depends on the input initally enetered on the home page.
+- The 'lucky search' button uses a more specific enpoint and takes the user straight to that website, such as entering bbc will load bbc.co.uk/news
+- This 'lucky search' was set up so the first result in a given topic is displayed - typing 'news' and pressing lucky search will redirect straight to bbc.co.uk/news
 
 
 ## Wins and Challenges
 ## Wins
-- The website correctly fetches a random quote from the api and displays.
-- The quote changes on page reload (which occurs on pressing the form submit 'get inspired' button).
+- The search input is not case sensitive.
+- The lucky search uses a loop so will work for any number of data objects.
+- Data displayed on the second page after the search button is pressed is dynamically retrived so will work for any number of data objects.
 
 ### Challenges
-- Error handling for out-of-range IDs does not work properly
+- error handling isnt perfect
 
 
 
