@@ -4,14 +4,16 @@ const cors = require('cors');
 
 const newsPages = [
     {name: 'BBC News', link: "https://www.bbc.co.uk/news"},
-    {name: "Sky News", link: "https://news.sky.com/uk"}
+    {name: "Sky News", link: "https://news.sky.com/uk"},
+    {name: "ITV News", link: "https://www.itv.com/news"},
+    {name: "Channel 4 News", link: "https://www.channel4.com/news/"},
+    {name: "The Guardian News", link: "https://www.theguardian.com/tone/news"},
+    {name: "The Telegraph", link: "https://www.telegraph.co.uk/news/"},
+    {name: "The Independent", link: "https://www.independent.co.uk/"},
+    {name: "Evening Standard", link: "https://www.standard.co.uk/news"},
 ]
 
 JSON.stringify(newsPages);
-
-function getRandomPerson () {
-  return newsPages[Math.floor(Math.random()*2)]  
-}
 
 app.use(cors());
 
@@ -25,12 +27,10 @@ app.get('/newsPages', (req, res) => {
   res.send(newsPages);
 });
 
-app.get('/newsPages/random', (req, res) => {
-  res.statusCode = 200;
-  let ranPerson = getRandomPerson();
-  let msg = ranPerson.name 
-  res.send(msg);
-});
+app.get('/newsPages/bbc', (req, res) => {
+    res.statusCode = 200;
+    res.send(newsPages[0]);
+  });
 
 const errorMsg = {"error: ": "Choose a number between 1 and 15"}
 

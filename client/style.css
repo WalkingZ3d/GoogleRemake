@@ -33,11 +33,6 @@
     z-index: 100;
 }
 
-@media only screen and (min-width: 600px) {
-    #navItem {
-        padding-left: 0px;
-    }
-}
 
 #title {
     padding-top: 2% !important;
@@ -56,8 +51,6 @@
 #subtitleH4 {
     font-size: 3.5em;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Changa&family=Orbitron&display=swap');
 
 
 footer {
@@ -107,76 +100,31 @@ body {
     flex: 1 1 auto;
 }
 
-@media (max-width:991.98px) {
-    .padding {
-        padding: 1.5rem
-    }
-}
-
-@media (max-width:767.98px) {
-    .padding {
-        padding: 1rem
-    }
-}
-
-
-.btn.btn-social-icon {
-    width: 50px;
-    height: 50px;
-    padding: 0
-}
-
-.btn-outline-github {
-    border: 2px solid white;
-    color: white;
-    border-radius: 25px;
-}
-
-.btn-outline-github:hover {
-    background: #181c24;
-    color: #ffffff
-}
-
-.btn-outline-twitter {
-    border: 2px solid white;
-    color: white;
-    border-radius: 25px;
-}
-
-.btn-outline-twitter:hover {
-    background: #1ca1f1;
-    color: #ffffff;
-    
-    border-radius: 25px;
-}
-
-.btn-outline-linkedin {
-    border: 2px solid white;
-    color: white;
-    border-radius: 25px;
-}
-
-.btn-outline-linkedin:hover {
-    background: #0a66c2;
-    color: #ffffff;
-    border-radius: 25px;
-}
-
-#socialButton {
-    margin-right: 10px;
-}
 
 #title {
     background-color: var(--body-color) !important;
     color: #fff !important;
 }
 
-#form {
+#searchBar {
     background-color: var(--body-color) !important;
     color: #fff !important;
 }
 
 #searchInput {
+    width: 75%;
+    border-radius: 25px;
+    padding: 10px
+}
+
+#searchBtn {
+    width: 50%;
+    border-radius: 25px;
+    padding: 10px;
+    margin-bottom: 10px
+}
+
+#luckyBtn {
     width: 50%;
     border-radius: 25px;
     padding: 10px
