@@ -63,6 +63,18 @@ app.get('/newsPages/news', (req, res) => {
     }  
 });
 
+app.get('/newsPages/news/:id', (req, res) => {      
+    try {
+      res.statusCode = 200; 
+      const newsId = req.params.id - 1;   
+      const selectedNews = sportsPages[newsId]
+      res.send(selectedNews);
+    } catch (error) {
+      res.statusCode = 404
+      res.send(errorMsg)
+    }   
+});
+
 
 app.get('/sportsPages', (req, res) => {
     try {
@@ -82,6 +94,18 @@ app.get('/sportsPages/sports', (req, res) => {
         res.statusCode = 404;    
         res.send(error + " " + statusCode + errorMsg)
     }  
+});
+
+app.get('/sportsPages/sports/:id', (req, res) => {      
+      try {
+        res.statusCode = 200; 
+        const sportsId = req.params.id - 1;   
+        const selectedSport = sportsPages[sportsId]
+        res.send(selectedSport);
+      } catch (error) {
+        res.statusCode = 404
+        res.send(errorMsg)
+      }   
 });
 
 module.exports = app
