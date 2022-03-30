@@ -45,23 +45,26 @@ function getInputValueLucky(){
     let inputVal = document.getElementById("searchInput").value.toLowerCase();
     if (inputVal === 'news'){
         inputVal = 'bbc'
-    }
-    let x = "/newsPages/" + inputVal;
-    console.log(x)
-    getLuckyPage(x)
+    } 
+    getLuckyPage(inputVal)
     }
 
-function getLuckyPage(endpoint){
-    let str = "http://localhost:3003"
-    let url = str + endpoint
-    console.log(url)
-    fetch(url)
+function getLuckyPage(inputVal){
+    let str = "http://localhost:3003/newsPages/"
+    fetch(str)
     .then(function (response) {
         return response.json();
     })
     .then(function (jsonData) {
-        console.log(jsonData.link)
-        document.getElementById("x").setAttribute("href", jsonData.link)
+        //console.log(jsonData)
+        let y;
+        for (let i = 0; i < jsonData.length; i++) {
+            if (jsonData[i].name === inputVal) {
+                y = jsonData[i].link
+            }
+        }
+        //console.log(y)
+        document.getElementById("x").setAttribute("href", y)
         document.getElementById("x").click()
     })
     .catch(function (error){
