@@ -99,7 +99,11 @@ function getAnchorInfo(endpoint){
         let tag = document.createElement("a")
         tag.textContent = jsonData[i].name
         tag.setAttribute('href', jsonData[i].link)
+        tag.setAttribute("class","list-group-item list-group-item-action")
         document.getElementById("listGroup").appendChild(tag)
+        let tag2 = document.createElement("p")
+        tag2.textContent = jsonData[i].description
+        tag.appendChild(tag2) 
     }
     })
     .catch(function (error){
