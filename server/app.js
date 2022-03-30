@@ -2,15 +2,15 @@ const express = require('express')
 const app = express()
 const cors = require('cors');
 
-const people = [
-    {name: 'Dan', age: 24},
-    {name: "Willis", age: 24}
+const newsPages = [
+    {name: 'BBC News', link: "https://www.bbc.co.uk/news"},
+    {name: "Sky News", link: "https://news.sky.com/uk"}
 ]
 
-JSON.stringify(people);
+JSON.stringify(newsPages);
 
 function getRandomPerson () {
-  return people[Math.floor(Math.random()*2)]  
+  return newsPages[Math.floor(Math.random()*2)]  
 }
 
 app.use(cors());
@@ -20,12 +20,12 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
-app.get('/people', (req, res) => {
+app.get('/newsPages', (req, res) => {
   res.statusCode = 200;
-  res.send(people);
+  res.send(newsPages);
 });
 
-app.get('/people/random', (req, res) => {
+app.get('/newsPages/random', (req, res) => {
   res.statusCode = 200;
   let ranPerson = getRandomPerson();
   let msg = ranPerson.name 
