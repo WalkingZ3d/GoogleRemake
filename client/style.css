@@ -136,7 +136,17 @@ body {
     margin-left: 35px;
     margin-right: 35px;
     text-decoration: none;
+    background-color: #666666;
 }
+
+#listGroup a p{
+    color: rgb(0, 0, 0) !important;
+    font-size: 0.7em !important;
+    margin-left: 35px;
+    margin-right: 35px;
+    text-decoration: none;
+}
+
 
 #listGroup a:hover{
     color: var(--orange-color) !important;
