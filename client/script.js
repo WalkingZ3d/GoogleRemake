@@ -22,9 +22,15 @@ function getWebsite(endpoint){
 
 function getInputValue(){
     let inputVal = document.getElementById("searchInput").value.toLowerCase();
-    let x = "/newsPages/" + inputVal;
-    //console.log(x)
-    //document.getElementById("nextPage").click()
+    let x = ""
+    if (inputVal.includes("news")) {
+        x = "/newsPages/" + inputVal;    
+    } else if(inputVal.includes("sports")){
+        x = "/sportsPages/" + inputVal;
+    } else if(inputVal.includes("sport")){
+        inputVal += "s"
+        x = "/sportsPages/" + inputVal;
+    }
     store(x)
 }
 

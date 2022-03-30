@@ -59,6 +59,17 @@ npm install coverage -D
 - independent
 - evening standard
 
+##### Sports 
+- news
+- bbc sport
+- itv sport
+- sky sport
+- channel 4 sport
+- guardian sport
+- telegraph sport
+- independent sport
+- evening standard sport
+
 ## Technologies
 - JavaScript
 - Node.js
@@ -89,6 +100,7 @@ npm install coverage -D
 
 ### Challenges
 - error handling isnt perfect
+- only works for 'news' or 'sports' - more time needed to implement more functionality
 
 
 
@@ -101,3 +113,4 @@ npm install coverage -D
 ## Future Features
 - The server will connect to a database so far more quotes can be retrieved.
 - The database will mean more enpoints are needed to show a wider variety of data.
+- Include functionality to retrieve based on more specific criteria - such as "sky sports"
