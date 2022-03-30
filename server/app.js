@@ -27,9 +27,9 @@ app.get('/newsPages', (req, res) => {
   res.send(newsPages);
 });
 
-app.get('/newsPages/bbc', (req, res) => {
+app.get('/newsPages/news', (req, res) => {
     res.statusCode = 200;
-    res.send(newsPages[0]);
+    res.send(newsPages);
   });
 
 const errorMsg = {"error: ": "Choose a number between 1 and 15"}
