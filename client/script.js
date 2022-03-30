@@ -58,12 +58,18 @@ function getInputValueLucky(){
     let inputVal = document.getElementById("searchInput").value.toLowerCase();
     if (inputVal === 'news'){
         inputVal = 'bbc'
-    } 
-    getLuckyPage(inputVal)
+        type = '/newsPages/'
+    } else if (inputVal === 'sports') {
+        inputVal = 'bbc sport'
+        type = '/sportsPages/'
+    }
+    getLuckyPage(inputVal, type)
     }
 
-function getLuckyPage(inputVal){
-    let str = "http://localhost:3003/newsPages/"
+function getLuckyPage(inputVal, type){
+    let str = "http://localhost:3003"
+    str += type
+    //console.log(str)
     fetch(str)
     .then(function (response) {
         return response.json();
