@@ -32,23 +32,8 @@ app.get('/newsPages', (req, res) => {
 app.get('/newsPages/news', (req, res) => {
     res.statusCode = 200;
     res.send(newsPages);
-  });
+});
 
-app.get('/newsPages/:id', (req, res) => {  
-    if (req.params.id <= 15 && req.params.id > 0) {
-      try {
-        res.statusCode = 200; 
-        const quoteId = req.params.id - 1;   
-        const selectedQuote = newsPages[quoteId]
-        res.send(selectedQuote);
-      } catch (error) {
-        res.statusCode = 404
-        res.send(errorMsg)
-      }     
-    } else if (req.params.id > 15 || req.params.id == 0){
-      res.statusCode = 404
-      res.send(errorMsg)
-    }
-  });
+
 
 module.exports = app
