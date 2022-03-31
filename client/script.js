@@ -125,3 +125,5 @@ function getAnchorInfo(endpoint){
 }
 
 //getAnchorInfo('/newsPages/news')
+
+//comment

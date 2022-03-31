@@ -96,7 +96,7 @@ npm install coverage -D
 
 ## Wins and Challenges
 ## Wins
-- The search input is not case sensitive.
+- The search input isnt case sensitive.
 - The lucky search uses a loop so will work for any number of data objects.
 - Data displayed on the second page after the search button is pressed is dynamically retrived so will work for any number of data objects.
 
