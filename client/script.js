@@ -48,16 +48,16 @@ function getSearchResults() {
 
 let inputPressed = document.getElementById("searchInput");
 
-// try {
-// inputPressed.addEventListener("keyup", function(e){
-//     if (e.key === 'Enter') {
-//         e.preventDefault();
-//         document.getElementById("searchBtn").click();
-//     }
-// })
-// } catch (error) {
-// console.log(error)
-// }
+try {
+inputPressed.addEventListener("keyup", function(e){
+    if (e.key === 'Enter') {
+        e.preventDefault();
+        getInputValue()
+    }
+})
+} catch (error) {
+console.log(error)
+}
 
 
 function getInputValueLucky(){
