@@ -108,5 +108,5 @@ app.get('/sportsPages/sports/:id', (req, res) => {
       }   
 });
 
-//export
+//exporting
 module.exports = app
